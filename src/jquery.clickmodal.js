@@ -1,3 +1,14 @@
+/*
+ * @author  Danilo Augusto <contato@daniloaugusto.com.br>
+ *          André Machado <andre.luismachado@gmail.com>
+ *          Fabio Vieira <>
+ *          Rodrigo Castilho <>
+ *
+ * @contributors
+ *          Clauber Stipkovic <clauber.halic@gmail.com>
+ *          Rafael Lazarini <rlazarini@gmail.com>
+ * */
+
 jQuery.fn.modal = function(options){
 	
 	// VERIFICANDO O HREF
