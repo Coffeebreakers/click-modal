@@ -9,10 +9,10 @@
  *          Rafael Lazarini <rlazarini@gmail.com>
  * */
 
-jQuery.fn.modal = function(options){
-	
+jQuery.fn.modal = function (options) {
+
 	// VERIFICANDO O HREF
-	if(!options){
+	if (!options) {
 		if(this.attr('href')) var options = { url: this.attr('href') };
 	} else {
 		if(!options.url)if(this.attr('href')) options.url = this.attr('href');
