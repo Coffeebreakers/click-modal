@@ -3,5 +3,5 @@ test('jQuery.fn.modal - Call Function', function () {
 });
 
 test('jQuery.fn.modal - Call Function openModal', function () {
-  //ok(jQuery.fn.modal.openModal(), 'Function openModal returning');
+ // ok(jQuery.fn.modal.openModal, 'Function openModal returning');
 });
