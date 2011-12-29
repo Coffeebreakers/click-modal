@@ -1,6 +1,6 @@
 /* MODAL */
 .load { position: absolute; top: 50%; left: 50%; width: 88px; height: 78px; margin: -39px 0 0 -44px; z-index: 99999;}
-.bg_modal { position: absolute; top: 0; left: 0; z-index: 99998; } 
+.bg_modal { position: absolute; top: 0; left: 0; z-index: 99998; }
 .view_modal { position: absolute; left: 50%;	top: 50%; text-align: left; z-index: 99998; }
 .modal { visibility: hidden; cursor:pointer; }
 
@@ -10,13 +10,13 @@ div.container h1 { font: bold 20px Arial; }
 
 div.container p { margin: 10px 0; font: 13px Arial; }
 
-div.exemplo { 
-  background : #f1f1f1; 
+div.exemplo {
+  background : #f1f1f1;
   margin: 20px 0;
   padding: 10px;
 }
 
-div.exemplo pre { 
+div.exemplo pre {
   background : #ffa;
   padding:10px;
   font: 14px Trebushet MS;
@@ -24,10 +24,10 @@ div.exemplo pre {
 
 div.exemplo h2{ font: bold 16px Arial; }
 
-div.conteudo_modal { 
+div.conteudo_modal {
   background: #fff;
   width: 280px;
-  height: 280px;	
+  height: 280px;
   color: #222;
   padding:0 10px;
 }

@@ -13,7 +13,7 @@ Just download the last version of the jQuery Click Modal Javascript and the jQue
     <link rel="stylesheet" href="jquery.clickmodal.css" type="text/css" media="screen" charset="utf-8"/>
   </head>
   <body>
-    
+
     <script src="jquery-x.x.js" type="text/javascript" charset="utf-8"></script>
     <script src="jquery.clickmodal-x.x.js" type="text/javascript" charset="utf-8"></script>
   </body>
