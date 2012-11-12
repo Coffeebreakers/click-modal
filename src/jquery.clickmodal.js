@@ -1,20 +1,24 @@
 /*
- * @author  Danilo Augusto <contato@daniloaugusto.com.br>
- *          André Machado <andre.luismachado@gmail.com>
+ * @author  Danilo Augusto - @maktuiu
+ *          André Machado - @andremachado
  *          Fabio Vieira <>
- *          Rodrigo Castilho <>
+ *          Rodrigo Castilho - @rodcast
  *
  * @contributors
- *          Clauber Stipkovic <clauber.halic@gmail.com>
- *          Rafael Lazarini <rlazarini@gmail.com>
+ *          Clauber Stipkovic - @clauberhalic
+ *          Rafael Lazarini - @rlazarini
  * */
 
 jQuery.fn.modal = function (options) {
   // VERIFICANDO O HREF
   if (!options) {
-    if (this.attr('href')) var options = { url: this.attr('href') };
+    if (this.attr('href')) {
+      var options = { url: this.attr('href') };
+    }      
   } else {
-    if (!options.url)if(this.attr('href')) options.url = this.attr('href');
+    if (!options.url)if(this.attr('href')) {
+      options.url = this.attr('href');
+    }
   }
 
   var settings = {
