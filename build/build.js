@@ -4,7 +4,7 @@
 
 var compressor = require('node-minify');
 
-this.compressor.minify({
+new compressor.minify({
     type: 'yui-css',
     fileIn: 'src/jquery.clickmodal.css',
     fileOut: 'minified/jquery.clickmodal.min.css',
@@ -14,7 +14,7 @@ this.compressor.minify({
 });
 
 // Using YUI Compressor for JS
-this.compressor.minify({
+new compressor.minify({
     type: 'yui-js',
     fileIn: 'src/jquery.clickmodal.js',
     fileOut: 'minified/jquery.clickmodal.min.js',
