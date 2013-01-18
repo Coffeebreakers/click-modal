@@ -1,5 +1,9 @@
 "use strict";
 
-var jshint = require('jshint');
+var jshint = require('jshint').JSHINT, 
+    result = jshint('src/jquery.clickmodal.js');
 
-console.log(jshint.JSHINT.data());
+if (result === false) {
+    console.log(jshint.errors);
+    console.log(jshint.data());
+}
