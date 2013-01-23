@@ -1,4 +1,5 @@
 /*jshint browser: true, jquery: true, indent: 4 */
+/*global */
 
 (function ($) {
     'use strict';
@@ -29,6 +30,7 @@
             closeClickOut: false,
             autoOpen: false
         };
+        
         options = jQuery.extend(settings, options);
 
         function openModal() {
