@@ -4,7 +4,9 @@ jQuery.fn.modal = function (options) {
     // verifying HREF
     if (!options) {
         if (this.attr('href')) {
-            options = { url: this.attr('href') };
+            options = { 
+                url: this.attr('href') 
+            };
         }
     } else {
         if (!options.url) {
@@ -56,19 +58,42 @@ jQuery.fn.modal = function (options) {
 
         /*SHOW BACKGROUND*/
         $('.bg_modal').fadeTo('fast', options.backgroundOpacity, function () {
-            $('.view_modal').load(options.url, { nocacheattr: (new Date()).getTime() }, function () {
+            $('.view_modal').load(
+                options.url, 
+                { 
+                    nocacheattr: (new Date()).getTime() 
+                }, 
+                function () {
+                    /*REMOVE LOAD*/
+                    $('.load').remove();
 
-                /*REMOVE LOAD*/
-                $('.load').remove();
+                    var GB_getPageScrollTop = function () {
+                        var yScrolltop;
+                        if (this.pageYOffset) {
+                            yScrolltop = this.pageYOffset;
+                        } else if (document.documentElement && document.documentElement.scrollTop || document.documentElement.scrollLeft) {
+                            yScrolltop = document.documentElement.scrollTop;
+                        } else if (document.body) {
+                            yScrolltop = document.body.scrollTop;
+                        }
+                        return yScrolltop;
+                    };
 
-                var GB_getPageScrollTop = function () {
-                    var yScrolltop;
-                    if (this.pageYOffset) {
-                        yScrolltop = this.pageYOffset;
-                    } else if (document.documentElement && document.documentElement.scrollTop || document.documentElement.scrollLeft) {
-                        yScrolltop = document.documentElement.scrollTop;
-                    } else if (document.body) {
-                        yScrolltop = document.body.scrollTop;
+                    /*CENTRALIZE MODAL*/
+                    if (options.position !== 'center') {
+                        var alturaModal = parseInt(options.top, 10) + parseInt(topModal, 10) + parseInt($('.view_modal').height(), 10);
+                        if (altura < alturaModal) {
+                            options.top = 0;
+                            topModal = altura - parseInt($('.view_modal').height(), 10);
+                        }
+                        $('.view_modal').css({
+                            marginTop: topModal,
+                            marginLeft: leftModal,
+                            left: options.left,
+                            top: options.top
+                        });
+                    } else {
+                        $('.view_modal').css({marginTop: parseInt(new GB_getPageScrollTop() - ($('.view_modal').height() / 2), 10), marginLeft: - parseInt($('.view_modal').width() / 2, 10)});
                     }
                     return yScrolltop;
                 };
@@ -86,21 +111,8 @@ jQuery.fn.modal = function (options) {
                         left: options.left,
                         top: options.top
                     });
-                } else {
-                    $('.view_modal').css({marginTop: parseInt(new GB_getPageScrollTop() - ($('.view_modal').height() / 2), 10), marginLeft: - parseInt($('.view_modal').width() / 2, 10)});
                 }
-
-                /*MODAL HIDE*/
-                if (options.backgroundOpacity !== 0) {
-                    $('.view_modal').fadeTo('fast', 1);
-                }
-
-                /*CLOSE MODAL*/
-                $("a[rel='modalclose']").click(function () {
-                    closeModal();
-                    return false;
-                });
-            });
+            );
         });
 
         if (options.closeClickOut === true) {
@@ -145,9 +157,3 @@ jQuery.fn.modal = function (options) {
         this.css('visibility', 'visible');
     }
 };
-
-// $(document).ready(function () {
-//     $('a[rel="modal"]').each(function () {
-//         $(this).modal();
-//     });
-// });
