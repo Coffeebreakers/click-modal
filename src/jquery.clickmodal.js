@@ -124,7 +124,10 @@ jQuery.fn.modal = function (options) {
 	}
 
     if (options.autoOpen === false) {
-        this.click(openModal);
+	this.on('click', function(e) {
+		e.preventDefault();
+		openModal();
+	});
     } else {
         openModal();
     }
