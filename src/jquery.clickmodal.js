@@ -86,6 +86,10 @@ jQuery.fn.modal = function (options) {
                 } else {
                     $('.view_modal').css({marginTop: parseInt(GB_getPageScrollTop() - ($('.view_modal').height() / 2)), marginLeft: -parseInt($('.view_modal').width() / 2)});
                 }
+                
+                /*scroll to modal*/
+                var scrollToModal = $('.view_modal').offset().top - ($('.view_modal').width()/3);
+                $('html, body').scrollTop(scrollToModal);
 
                 /*MODAL HIDE*/
                 if (options.backgroundOpacity !== 0) {
