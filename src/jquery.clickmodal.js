@@ -30,7 +30,7 @@ jQuery.fn.modal = function (options) {
         /*CREATE ELEMENTS*/
         $('body').append($('<img />').attr({src: "img/load.gif", width: 88, height: 78, alt: "", className: 'load'})).append($('<div></div>').addClass('bg_modal')).append($('<div></div>').addClass('view_modal'));
 
-        // verificando se o body é menor do que o screen
+        // verificando se o body ï¿½ menor do que o screen
         var altura = $('html')[0].scrollHeight < $(window).height() ? $(window).height() : $('html')[0].scrollHeight;
         $('.bg_modal').width($('html')[0].scrollWidth).height(altura);
 
@@ -115,32 +115,33 @@ jQuery.fn.modal = function (options) {
         } else {
             return false;
         }
-
-        if (options.autoOpen === false) {
-            this.click(openModal);
-        } else {
-            openModal();
-        }
-
-        /*CLOSE MODAL*/
-        function closeModal() {
-            /*HIDE MODAL*/
-            $('.view_modal').fadeTo('fast', 0, function () {
-                $(this).remove();
-            });
-
-            /*HIDE BACKGROUND*/
-            $('.bg_modal').fadeTo('fast', 0, function () {
-                $(this).remove();
-                $('select').css('visibility', 'visible');
-            });
-
-            $(window).unbind();
-            $('.bg_modal').unbind();
-        }
-
+        
         this.css('visibility', 'visible');
+	}
+
+    if (options.autoOpen === false) {
+        this.click(openModal);
+    } else {
+        openModal();
     }
+
+    /*CLOSE MODAL*/
+    function closeModal() {
+        /*HIDE MODAL*/
+        $('.view_modal').fadeTo('fast', 0, function () {
+            $(this).remove();
+        });
+
+        /*HIDE BACKGROUND*/
+        $('.bg_modal').fadeTo('fast', 0, function () {
+            $(this).remove();
+            $('select').css('visibility', 'visible');
+        });
+
+        $(window).unbind();
+        $('.bg_modal').unbind();
+    }
+
 };
 
 $(document).ready(function () {
