@@ -1,0 +1,11 @@
+{
+  "name": "jquery-clickmodal",
+  "version": "1.0.0",
+  "description": "The jQuery Modal plugin",
+  "author": "Coffeebreakers.org",
+  "engine": "node >= 0.10.x",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4"
+  }
+}
