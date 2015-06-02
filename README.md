@@ -1,5 +1,5 @@
-Click Modal for jQuery
-======================
+Click Modal for jQuery [![Build Status](https://travis-ci.org/Coffeebreakers/click-modal.svg?branch=master)](https://travis-ci.org/Coffeebreakers/click-modal)
+----------------------
 
 The Click Modal is a jQuery Plugin to provides a simple em usefull modal web browser.
 
