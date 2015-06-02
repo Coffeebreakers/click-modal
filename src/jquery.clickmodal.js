@@ -96,7 +96,7 @@ jQuery.fn.modal = function (options) {
                         $('.view_modal').css({marginTop: parseInt(new GB_getPageScrollTop() - ($('.view_modal').height() / 2), 10), marginLeft: - parseInt($('.view_modal').width() / 2, 10)});
                     }
                     return yScrolltop;
-                };
+                });
 
                 /*CENTRALIZE MODAL*/
                 if (options.position !== 'center') {
@@ -112,8 +112,11 @@ jQuery.fn.modal = function (options) {
                         top: options.top
                     });
                 } else {
-                    // TODO: verificar se esse else é necessário
-                    $('.view_modal').css({marginTop: parseInt(GB_getPageScrollTop() - ($('.view_modal').height() / 2)), marginLeft: -parseInt($('.view_modal').width() / 2)});
+                    // TODO: verificar se esse else e necessario
+                    $('.view_modal').css({
+                        marginTop: new parseInt(GB_getPageScrollTop() - ($('.view_modal').height() / 2)), 
+                        marginLeft: - (new parseInt($('.view_modal').width() / 2))
+                    });
                 }
                 
                 /*scroll to modal*/
